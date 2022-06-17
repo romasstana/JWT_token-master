@@ -1,12 +1,11 @@
-package com.example.solidbankapp;
+package com.example.solidbankapp.jwt;
+import com.example.solidbankapp.roleAndUser.CustomUserDetails;
+import com.example.solidbankapp.roleAndUser.CustomUserDetailsService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
 import jakarta.servlet.http.HttpServletRequest;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

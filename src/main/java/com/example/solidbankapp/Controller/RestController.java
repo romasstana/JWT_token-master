@@ -11,6 +11,7 @@ import com.example.solidbankapp.TRANSACTIONS.TransactionRepository;
 import com.example.solidbankapp.TransactionDeposit;
 import com.example.solidbankapp.TransactionWithdraw;
 import com.example.solidbankapp.WITHDRAW.AccountWithdrawService;
+import com.example.solidbankapp.transfer.Transfer;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -39,6 +40,8 @@ public class RestController {
     private TransactionWithdraw transactionWithdraw;
     @Autowired
     private TransactionDeposit transactionDeposit;
+    @Autowired
+    private Transfer transfer;
     @GetMapping()
     public List<Account> getAllAccounts(@RequestParam String clientId){
         return accountDAO.findAccountsByClientId(clientId);
@@ -79,6 +82,15 @@ public class RestController {
     public void postDeposit(@RequestBody RequestTransaction requestTransaction, @PathVariable("account_id") String accountId) throws Exception {
         transactionDeposit.execute(accountListingService.getClientAccount("1", accountId), requestTransaction.amount);
         System.out.println(requestTransaction.amount + "$ was transferred to " + accountListingService.getClientAccount("1", accountId));
+    }
+    @PostMapping("/{account_id}/transfer")
+    public void postTransfer(@RequestBody RequestTransaction requestTransaction, @PathVariable("account_id_from") String accountIdFrom,
+                             @PathVariable("account_id_to") String accountIdTo) throws Exception{
+
+        transactionWithdraw.execute(accountListingService.getClientAccount("1", accountIdFrom), requestTransaction.amount);
+        transactionDeposit.execute(accountListingService.getClientAccount("1", accountIdTo), requestTransaction.amount);
+        System.out.println(requestTransaction.amount + "$ was transferred to " + accountListingService.getClientAccount("1", accountIdTo) +
+                "from " + accountListingService.getClientAccount("1", accountIdFrom));
     }
 
 }

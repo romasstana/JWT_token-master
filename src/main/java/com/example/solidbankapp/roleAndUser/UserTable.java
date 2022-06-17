@@ -1,4 +1,4 @@
-package com.example.solidbankapp;
+package com.example.solidbankapp.roleAndUser;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

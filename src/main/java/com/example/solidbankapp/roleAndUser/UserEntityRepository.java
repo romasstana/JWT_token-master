@@ -1,7 +1,6 @@
-package com.example.solidbankapp;
+package com.example.solidbankapp.roleAndUser;
 
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Repository;
 
 @Repository

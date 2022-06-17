@@ -1,4 +1,4 @@
-package com.example.solidbankapp;
+package com.example.solidbankapp.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;

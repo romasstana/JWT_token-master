@@ -1,4 +1,4 @@
-package com.example.solidbankapp;
+package com.example.solidbankapp.roleAndUser;
 
 
 import org.springframework.data.jdbc.repository.query.Query;

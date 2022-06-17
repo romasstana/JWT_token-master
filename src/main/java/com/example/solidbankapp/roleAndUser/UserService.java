@@ -1,5 +1,4 @@
-package com.example.solidbankapp;
-import lombok.AllArgsConstructor;
+package com.example.solidbankapp.roleAndUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

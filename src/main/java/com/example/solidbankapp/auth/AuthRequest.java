@@ -1,4 +1,4 @@
-package com.example.solidbankapp;
+package com.example.solidbankapp.auth;
 
 import lombok.Data;
 

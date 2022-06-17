@@ -1,6 +1,9 @@
-package com.example.solidbankapp;
+package com.example.solidbankapp.auth;
 
 
+import com.example.solidbankapp.jwt.JwtProvider;
+import com.example.solidbankapp.roleAndUser.UserService;
+import com.example.solidbankapp.roleAndUser.UserTable;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;

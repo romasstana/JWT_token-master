@@ -1,6 +1,6 @@
 package com.example.solidbankapp;
+import com.example.solidbankapp.jwt.JwtFilter;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
