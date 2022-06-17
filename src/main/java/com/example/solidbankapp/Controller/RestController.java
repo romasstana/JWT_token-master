@@ -84,12 +84,11 @@ public class RestController {
         System.out.println(requestTransaction.amount + "$ was transferred to " + accountListingService.getClientAccount("1", accountId));
     }
     @PostMapping("/{account_id}/transfer")
-    public void postTransfer(@RequestBody RequestTransaction requestTransaction, @PathVariable("account_id_from") String accountIdFrom,
-                             @PathVariable("account_id_to") String accountIdTo) throws Exception{
+    public void postTransfer(@RequestBody RequestTransaction requestTransaction, @PathVariable("account_id") String accountIdFrom) throws Exception{
 
         transactionWithdraw.execute(accountListingService.getClientAccount("1", accountIdFrom), requestTransaction.amount);
-        transactionDeposit.execute(accountListingService.getClientAccount("1", accountIdTo), requestTransaction.amount);
-        System.out.println(requestTransaction.amount + "$ was transferred to " + accountListingService.getClientAccount("1", accountIdTo) +
+        transactionDeposit.execute(accountListingService.getClientAccount("1", requestTransaction.accountIdTo), requestTransaction.amount);
+        System.out.println(requestTransaction.amount + "$ was transferred to " + accountListingService.getClientAccount("1", requestTransaction.accountIdTo) +
                 "from " + accountListingService.getClientAccount("1", accountIdFrom));
     }
 
